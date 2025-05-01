@@ -1,0 +1,5 @@
+setup.py
+moonapidemo.egg-info/PKG-INFO
+moonapidemo.egg-info/SOURCES.txt
+moonapidemo.egg-info/dependency_links.txt
+moonapidemo.egg-info/top_level.txt

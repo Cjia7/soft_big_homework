@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绿源视界</title>
+    <!-- 引用 CSS 文件 -->
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+
+<!-- 项目名称 -->
+<h1 class="project-name">绿源视界</h1>
+
+<div class="container right-panel-active">
+    <!-- Sign Up -->
+    <div class="container__form container--signup">
+      <form action="/register" method="POST" class="form" id="form1">
+        <h2 class="form__title">GET CAPTCHA</h2>
+{#        <input type="text" name="username" placeholder="User" class="input" required />#}
+        <input type="email" name="email" placeholder="Email" class="input" required />
+{#        <input type="password" name="password" placeholder="Password" class="input" required />#}
+        <button type="submit" class="btn">GET CAPTCHA</button>
+      </form>
+    </div>
+
+    <!-- Sign In -->
+    <div class="container__form container--signin">
+      <form action="/login" method="POST" class="form" id="form2">
+        <h2 class="form__title">Sign In</h2>
+{#        <input type="email" name="email" placeholder="Email" class="input" required />#}
+        <input type="password" name="CAPTCHA" placeholder="CAPTCHA" class="input" required />
+{#        <a href="#" class="link">Forgot your password?</a>#}
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+    </div>
+
+    <!-- Overlay -->
+    <div class="container__overlay">
+      <div class="overlay">
+        <div class="overlay__panel overlay--left">
+          <button class="btn" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay__panel overlay--right">
+          <button class="btn" id="signUp">GET CAPTCHA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 在页面底部引用 JavaScript 文件 -->
+<script src="../static/js/login.js"></script>
+</body>
+</html>

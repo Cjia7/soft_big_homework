@@ -1,0 +1,127 @@
+<!-- 声明文档类型 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--更多资源：https://gitee.com/iGaoWei/big-data-view -->
+    <!-- 指定网页字符编码 -->
+    <meta charset="UTF-8">
+    <!-- 适配移动端 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各省资源监控</title>
+    <link rel="stylesheet" href="../static/css/province.css">
+</head>
+
+<body>
+<div class="main">
+    <div id="title">{{data}}资源与环境监控
+    <a href="http://127.0.0.1:5000/home1.html" style="color:lightseagreen; font-size: 0.7em">---回到首页</a></div>
+    <div id="left1">
+    </div>
+    <div id="left2">
+    </div>
+    <div id="center1">
+        <div class="item">
+            <div class="number" id="confirm"></div>
+            <div class="text">水资源总量(亿立方米)</div>
+        </div>
+        <div class="item">
+            <div class="number" id="heal"></div>
+            <div class="text">人均水资源(立方米)</div>
+        </div>
+        <div class="item">
+            <div class="number" id="dead"></div>
+            <div class="text">地表水资源量(亿立方米)</div>
+        </div>
+        <div class="item">
+            <div class="number" id="nowConfirm"></div>
+            <div class="text">森林面积(万公顷)</div>
+        </div>
+        <div class="item">
+            <div class="number" id="noInfect"></div>
+            <div class="text">森林储蓄量(亿立方米)</div>
+        </div>
+        <div class="item">
+            <div class="number" id="importedCase"></div>
+            <div class="text">人工林面积(万公顷)</div>
+        </div>
+    </div>
+    <div id="center2">
+    </div>
+    <div id="right1"></div>
+    <div id="right2"></div>
+    <!--更多资源：https://gitee.com/iGaoWei/big-data-view -->
+    <script src="../static/js/{{data}}data.js"></script>
+    <script src="../static/js/center1.js"></script>
+    <script src="../static/js/echarts.min.js"></script>
+    <script src="../static/js/echarts-gl.min.js"></script>
+    <script src="../static/js/china.js"></script>
+    <script src="../static/js/left1.js"></script>
+    <script src="../static/js/left2.js"></script>
+    <script src="../static/js/province_right1.js" charset="utf-8"></script>
+    <script src="../static/js/province_right2.js" charset="utf-8"></script>
+     <script>
+        var myChart = echarts.init(document.getElementById('center2'),'light');
+        var option = {
+            tooltip: {
+      // trigger 触发方式。  非轴图形，使用item的意思是放到数据对应图形上触发提示
+      trigger: 'item',
+      // 格式化提示内容：
+      // a 代表series系列图表名称
+      // b 代表series数据名称 data 里面的name
+      // c 代表series数据值 data 里面的value
+      // d代表  当前数据/总数据的比例
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+            title:{
+              text: '各排放物对比(千克)',
+              textStyle: {
+            color: 'white',
+        },
+        left: 'left',
+            },
+            legend: {
+                top: 'bottom',
+                textStyle: {
+            color: 'white',
+        }
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    mark: {
+                        show: true
+                    },
+                    dataView: {
+                        show: true,
+                        readOnly: false
+                    },
+                    restore: {
+                        show: true
+                    },
+                    saveAsImage: {
+                        show: true
+                    }
+                }
+            },
+            series: [{
+                name: '占比',
+                type: 'pie',
+                radius: [40, 180],
+                center: ['50%', '50%'],
+                roseType: 'area',
+                itemStyle: {
+                    borderRadius: 8
+                },
+                data: data2,
+                color: ['#78e82e', '#10e05b', '#02f679','#08efb2',
+                    '#00d9ff','#009dff']
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</div>
+</body>
+
+</html>

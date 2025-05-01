@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: moonapidemo
+Version: 1.0
+Summary: Moonapi Demo
+Home-page: http://www.moonapi.com
+Author: MoonapiDemo
+Author-email: demo@moonapi.com
+Keywords: moonapi
+Platform: any
+
+Moonapi Demo for python

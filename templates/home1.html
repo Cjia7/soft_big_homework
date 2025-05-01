@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>首页</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../static/css/home.css">
+    <style>
+  .main {
+    transform: scale(100%);
+  }
+</style>
+</head>
+<body>
+<script>
+  // 禁止鼠标滚轮缩放
+  window.addEventListener('wheel', function(event) {
+    if (event.ctrlKey) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  // 禁止触摸缩放
+  window.addEventListener('touchmove', function(event) {
+    if (event.scale !== 1) { event.preventDefault(); }
+  }, { passive: false });
+</script>
+<div class="main">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+  <div class="container-fluid">
+    <ul class="navbar-nav fixed-top">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">首页</a>
+      </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/world">世界资源与环境状况</a>
+     </li>
+     <li class="nav-item">
+         <a class="nav-link" href="/china">中国水资源环境监测</a>
+     </li>
+     <li class="select">
+        <form action="/province" method="get">
+                    <select style="height: 45px; width: 200px; color: #f4fff3; background-color: #96b97d;border-color: rgba(184,196,183,0)"  name="data" >
+                            <option  value="volovo">选择查看的省份：</option>
+                            <option  value="安徽">安徽</option>
+                            <option  value="澳门">澳门</option>
+                            <option  value="北京">北京</option>
+                            <option  value="重庆">重庆</option>
+                            <option  value="福建">福建</option>
+                            <option  value="甘肃">甘肃</option>
+                            <option  value="广东">广东</option>
+                            <option  value="广西">广西</option>
+                            <option  value="贵州">贵州</option>
+                            <option  value="海南">海南</option>
+                            <option  value="河北">河北</option>
+                            <option  value="河南">河南</option>
+                            <option  value="黑龙江">黑龙江</option>
+                            <option  value="湖北">湖北</option>
+                            <option  value="湖南">湖南</option>
+                            <option  value="吉林">吉林</option>
+                            <option  value="江苏">江苏</option>
+                            <option  value="江西">江西</option>
+                            <option  value="辽宁">辽宁</option>
+                            <option  value="内蒙古">内蒙古</option>
+                            <option  value="宁夏">宁夏</option>
+                            <option  value="青海">青海</option>
+                            <option  value="山东">山东</option>
+                            <option  value="山西">山西</option>
+                            <option  value="陕西">陕西</option>
+                            <option  value="上海">上海</option>
+                            <option  value="四川">四川</option>
+                            <option  value="台湾">台湾</option>
+                            <option  value="天津">天津</option>
+                            <option  value="西藏">西藏</option>
+                            <option  value="香港">香港</option>
+                            <option  value="新疆">新疆</option>
+                            <option  value="云南">云南</option>
+                            <option  value="浙江">浙江</option>
+                    </select>
+                    <a>
+                        <input style="background-color: #96b97d;color: #f4fff3;border-color: #dce8db;border-radius: 10px" id="sub" type="submit" value="查询" placeholder="">
+                    </a>
+                </form>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<div id="section1" class="text-white">
+    <div class="title">节能减排，科学发展</div>
+    <div id="left"></div>
+    <div id="right"></div>
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+   <!-- 指示符 -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../static/images/1d53c9ee-a77e-4b88-9ab0-a6c1867ab490.jpg" class="d-block" style="width:100%" alt="Chania">
+    </div>
+    <div class="carousel-item">
+      <img src="../static/images/1712133928667.png" class="d-block" style="width:100%" alt="Chania">
+    </div>
+    <div class="carousel-item">
+      <img src="../static/images/68e2606d-517f-49aa-aa00-f39c4bf1f706.jpg" class="d-block" style="width:100%" alt="Chania">
+    </div>
+  </div>
+
+  <!-- 左右切换按钮 -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+</div>
+    <script src="../static/js/echarts.min.js"></script>
+    <script src="../static/js/home1.js"></script>
+</div>
+</body>
+</html>
+
