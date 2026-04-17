@@ -83,8 +83,11 @@ for data in data_values:
 
 i = 0
 
+# Use the template file inside this project regardless of current working directory.
+template_path = "templates/China.html"
+
 # 读取原始HTML文件
-with open(r"6--flask (2)\6--flask\6--flask\templates\China.html", "r", encoding="utf-8") as file:
+with open(template_path, "r", encoding="utf-8") as file:
     fcontent = file.read()
     soup = BeautifulSoup(fcontent, 'html.parser')
 
@@ -103,6 +106,6 @@ with open(r"6--flask (2)\6--flask\6--flask\templates\China.html", "r", encoding=
 # exit()
 
 # 将修改后的HTML代码写入原始文件
-with open(r"6--flask (2)\6--flask\6--flask\templates\China.html", "w", encoding="utf-8") as file:
+with open(template_path, "w", encoding="utf-8") as file:
     file.write(soup.prettify())
     
